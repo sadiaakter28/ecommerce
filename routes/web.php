@@ -12,7 +12,50 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//-------------------Frontend Start------------------//
+Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
+    //Home
+    Route::get('/', 'HomeController@home')->name('home');
+    //Contact
+    Route::get('/contact', 'ContactController@contacts')->name('contact');
 
-Route::get('/', 'PageController@index');
+    Route::group(['prefix'=>'products'], function (){
+        Route::get('/', 'ProductController@index')->name('products.index');
+//        Route::get('/show/{slug}', 'ProductController@show')->name('products.show');
+        Route::get('/show', 'ProductController@show')->name('products.show');
+    });
 
-Route::get('/contact', 'PageController@contacts');
+});
+
+
+//-------------------Frontend End------------------//
+
+//-------------------Backend Start------------------//
+Route::group(['prefix'=>'admin', 'namespace' => 'Backend'], function (){
+    //home
+    Route::get('/', 'HomeController@index')->name('admin.index');
+    //product
+    Route::group(['prefix'=>'products'], function (){
+        Route::get('/', 'ProductController@index')->name('admin.products');
+        Route::get('/create', 'ProductController@create')->name('admin.products.create');
+        Route::post('/store', 'ProductController@store')->name('admin.products.store');
+        Route::get('/edit/{id}', 'ProductController@edit')->name('admin.products.edit');
+        Route::post('/update/{id}', 'ProductController@update')->name('admin.products.update');
+        Route::post('/delete/{id}', 'ProductController@delete')->name('admin.products.delete');
+    });
+
+    //categories
+    Route::group(['prefix'=>'categories'], function (){
+        Route::get('/', 'CategoryController@index')->name('admin.categories');
+        Route::get('/create', 'CategoryController@create')->name('admin.categories.create');
+        Route::post('/store', 'CategoryController@store')->name('admin.categories.store');
+        Route::get('/edit/{id}', 'CategoryController@edit')->name('admin.categories.edit');
+        Route::post('/update/{id}', 'CategoryController@update')->name('admin.categories.update');
+        Route::post('/delete/{id}', 'CategoryController@delete')->name('admin.categories.delete');
+    });
+
+
+    //
+
+});
+//-------------------Backend End------------------//
