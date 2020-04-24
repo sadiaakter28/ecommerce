@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
-
+@section('title')
+    All Products | Ecommerce
+@endsection
 @push('css')
 @endpush
 @section('main')

@@ -12,8 +12,17 @@ class ProductController extends Controller
         $products=Product::orderBy('id', 'desc')->paginate(15);
         return view('frontend.products.index')->with('products',$products);
     }
-    public function show()
+    public function show($id)
     {
+        $product=Product::find($id);
+        if (!is_null($product)){
+            return view('frontend.products.show', compact('product'));
+        }
+        else{
+            session()->flash('errors','Sorry !! There is no product by this URL');
+            return redirect()->route('products.index');
+        }
+        //Using Slug
 //        $product=Product::where('slug', $slug)->first();
 ////        dd($product);
 //        if (!is_null($product)){
@@ -23,7 +32,5 @@ class ProductController extends Controller
 //            session()->flash('errors','Sorry !! There is no product by this URL');
 //            return redirect()->route('products.index');
 //        }
-        $products=Product::orderBy('id', 'desc')->paginate(15);
-        return view('frontend.products.show', compact('products'));
     }
 }

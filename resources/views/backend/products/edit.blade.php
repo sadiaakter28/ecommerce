@@ -1,5 +1,7 @@
 @extends('backend.layouts.master')
-
+@section('title')
+    Edit Product | Ecommerce
+@endsection
 @section('main')
     <div class="content-wrapper">
         <!-- Page Title Header Starts-->

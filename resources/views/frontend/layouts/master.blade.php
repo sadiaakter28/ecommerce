@@ -1,6 +1,8 @@
 <html>
 <head>
-    <title>Ecommerce</title>
+    <title>
+        @yield('title','Ecommerce')
+    </title>
     @include('frontend.partials.style')
 </head>
 

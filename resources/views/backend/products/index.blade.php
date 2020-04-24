@@ -1,7 +1,8 @@
 @extends('backend.layouts.master')
+@section('title')
+    Products | Ecommerce
+@endsection
 
-@push('css')
-@endpush
 @section('main')
     <div class="content-wrapper">
         <div class="row">

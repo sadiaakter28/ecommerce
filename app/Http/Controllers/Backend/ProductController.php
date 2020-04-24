@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImage;
 //use Faker\Provider\Image;
@@ -26,8 +27,10 @@ class ProductController extends Controller
         $request->validate([
             'title'=> 'required|max:150',
             'description'=> 'required',
-            'price'=> 'required',
-            'quantity'=> 'required',
+            'price'=> 'required|numeric',
+            'quantity'=> 'required|numeric',
+            'category_id'=> 'required|numeric',
+            'brand_id'=> 'required|numeric',
         ]);
         $product = new Product;
         $product->title = $request->title;
@@ -35,8 +38,8 @@ class ProductController extends Controller
         $product->description=$request->description;
         $product->price=$request->price;
         $product->quantity=$request->quantity;
-        $product->category_id = 1;
-        $product->brand_id = 1;
+        $product->category_id = $request->category_id;
+        $product->brand_id = $request->brand_id;
         $product->admin_id = 1;
         $product->save();
         //Insert Image into ProductImage Model(Only for one image)
@@ -82,15 +85,18 @@ class ProductController extends Controller
         $request->validate([
             'title'=> 'required|max:150',
             'description'=> 'required',
-            'price'=> 'required',
-            'quantity'=> 'required',
+            'price'=> 'required|numeric',
+            'quantity'=> 'required|numeric',
+            'category_id'=> 'required|numeric',
+            'brand_id'=> 'required|numeric',
         ]);
         $product = Product::find($id);
         $product->title = $request->title;
         $product->description=$request->description;
         $product->price=$request->price;
         $product->quantity=$request->quantity;
-
+        $product->category_id = $request->category_id;
+        $product->brand_id = $request->brand_id;
         $product->save();
 
         //Insert Image into ProductImage Model(Only for Multiple image)

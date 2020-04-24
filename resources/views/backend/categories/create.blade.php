@@ -1,5 +1,7 @@
 @extends('backend.layouts.master')
-
+@section('title')
+    Create Category | Ecommerce
+@endsection
 @section('main')
     <div class="content-wrapper">
         <!-- Page Title Header Starts-->
@@ -30,7 +32,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Parent Category</label>
                                 <select class="form-control" name="parent_id" id="exampleInputEmail1">
-                                    <option value="">Please Select a Primary Category</option>
+                                    <option value="">Please Select a Parent Category</option>
                                     @foreach($main_categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach

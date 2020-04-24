@@ -1,7 +1,9 @@
 @extends('frontend.layouts.master')
 @section('title')
-    Home | Ecommerce
+    All Products | Ecommerce
 @endsection
+@push('css')
+@endpush
 @section('main')
     <div class="container margin-top-20">
         <div class="row">
@@ -10,7 +12,9 @@
             </div>
             <div class="col-md-8">
                 <div class="widget">
-                    <h3>Featured Products</h3>
+                    <h3>Searched Products For -
+                        <span class="badge badge-primary">{{$search}}</span>
+                    </h3>
                     @include('frontend.products.partials.all_products')
                 </div>
 

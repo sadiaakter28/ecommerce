@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h4 class="card-title">
 {{--                        <a href="{{route('products.show', $product->slug)}}">{{$product->title}}</a>--}}
-                        <a href="{{route('products.show')}}">{{$product->title}}</a>
+                        <a href="{{route('products.show',$product->id)}}">{{$product->title}}</a>
                     </h4>
                     <p class="card-text">{{$product->price}}</p>
                     <a href="#" class="btn btn-outline-warning">Add to Cart</a>

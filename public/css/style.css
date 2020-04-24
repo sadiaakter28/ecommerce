@@ -1,8 +1,31 @@
+
+/* Product CSS Start*/
+.product-item{
+    background: #4e555b;
+}
+.child-rows{
+    padding-left: 20px;
+    border-left: 1px solid #dfdfdf;
+    background: #FFF;
+}
+.child-rows a.list-group-item.list-group-item-action{
+    border-left: 0px!important;
+}
+.list-group-item.active{
+    z-index: 2;
+    color: #fff;
+    background-color: #02aadd;
+    border-color: #02aadd;
+    border-radius: 0px!important;
+}
+/* Product CSS End*/
+
 /*
+
 Override CSS
 */
 .bg-light{
-    background-color: #ffaa80!important;
+    background-color: #33b4ff!important;
 }
 
 .margin-top-20{
@@ -14,5 +37,6 @@ Override CSS
 .footer-bottom{
     padding: 20px;
     margin-top: 20px;
-    background: #ffaa80;
+    background: #33b4ff;
 }
+
