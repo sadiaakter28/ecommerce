@@ -81,7 +81,6 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-
         $request->validate([
             'title'=> 'required|max:150',
             'description'=> 'required',
@@ -114,7 +113,6 @@ class ProductController extends Controller
                 $product_image->save();
             }
         }
-
         return redirect()->route('admin.products');
     }
 

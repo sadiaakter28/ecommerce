@@ -11,7 +11,8 @@ class CategoryController extends Controller
     public function show($id)
     {
         $category=Category::find($id);
-        if (!is_null($category)){
+        if (!is_null($category))
+        {
             return view('frontend.categories.show', compact('category'));
         }
         else{

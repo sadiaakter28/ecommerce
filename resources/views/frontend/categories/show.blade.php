@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-8">
                 <div class="widget">
-                    <h3>All Products in <span class="badge badge-info">{{$category->name}}</span></h3>
+                    <h3>All Products in <span class="badge badge-info">{{$category->name}} Category</span></h3>
                     @php
                         $products = $category->products()->paginate(9);
                     @endphp

@@ -18,6 +18,13 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
     //Home
     Route::get('/', 'HomeController@home')->name('home');
 
+    Route::get('/registration', 'RegistrationController@index')->name('registration');
+    Route::post('/registration/create', 'RegistrationController@create')->name('registration.create');
+
+    Route::get('/login', 'LoginController@index')->name('login');
+    Route::post('/login/create', 'LoginController@create')->name('login.create');
+
+    Route::get('/logout', 'LoginController@logout')->name('logout');
     //Search
     Route::get('/search/', 'SearchController@search')->name('search');
 
@@ -29,11 +36,10 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
         Route::get('/', 'ProductController@index')->name('products.index');
         //Route::get('/show/{slug}', 'ProductController@show')->name('products.show');
         Route::get('/show/{id}', 'ProductController@show')->name('products.show');
-
     });
     //Category
     Route::group(['prefix'=>'categories'], function (){
-        Route::get('/', 'CategoryController@index')->name('categories.index');
+
         Route::get('/show/{id}', 'CategoryController@show')->name('categories.show');
 
     });

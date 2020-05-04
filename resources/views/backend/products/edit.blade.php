@@ -38,6 +38,27 @@
                                 <input type="number" value="{{$product->quantity}}" class="form-control" name="quantity" id="exampleInputEmail1" placeholder="Enter Product Price" required>
                             </div>
                             <div class="form-group">
+                                <label for="exampleInputEmail1">Select Category</label>
+                                <select class="form-control" name="category_id" id="exampleInputEmail1">
+                                    <option value="">Please Select a Category for the Product</option>
+                                    @foreach(App\Models\Category::orderBy('name', 'desc')->where('parent_id', NULL)->get() as $parent)
+                                        <option value="{{$parent->id}}" {{$parent->id == $product->category->id ? 'selected' : ''}}>{{$parent->name}}</option>
+                                        @foreach(App\Models\Category::orderBy('name', 'desc')->where('parent_id', $parent->id)->get() as $child)
+                                            <option value="{{$child->id}}" {{$child->id == $product->category->id ? 'selected' : ''}}>   ---->{{$child->name}}</option>
+                                        @endforeach
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Select Brand</label>
+                                <select class="form-control" name="brand_id" id="exampleInputEmail1">
+                                    <option value="">Please Select a Brand for the Product</option>
+                                    @foreach(App\Models\Brand::orderBy('name', 'asc')->get() as $br)
+                                        <option value="{{$br->id}}"{{$br->id == $product->brand->id ? 'selected' : ''}}>{{$br->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Product Image</label>
                                 <div class="row">
                                     <div class="col-md-4">

@@ -14,8 +14,8 @@
 .list-group-item.active{
     z-index: 2;
     color: #fff;
-    background-color: #02aadd;
-    border-color: #02aadd;
+    background-color: #33b4ff;
+    border-color: #33b4ff;
     border-radius: 0px!important;
 }
 /* Product CSS End*/
@@ -24,6 +24,7 @@
 
 Override CSS
 */
+
 .bg-light{
     background-color: #33b4ff!important;
 }
@@ -38,5 +39,6 @@ Override CSS
     padding: 20px;
     margin-top: 20px;
     background: #33b4ff;
+
 }
 
