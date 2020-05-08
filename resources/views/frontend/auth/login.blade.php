@@ -59,14 +59,13 @@
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Login') }}
                                     </button>
-                                    Not a User? <a href="{{route('registration')}}">Create account</a>
-{{--                                    <div class="offset-md-4">--}}
-{{--                                    </div>--}}
-{{--                                    @if (Route::has('password.request'))--}}
-{{--                                        <a class="btn btn-link" href="{{ route('password.request') }}">--}}
-{{--                                            {{ __('Forgot Your Password?') }}--}}
-{{--                                        </a>--}}
-{{--                                    @endif--}}
+                                    @if (Route::has('password.request'))
+                                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                                            {{ __('Forgot Your Password?') }}
+                                        </a>
+                                    @endif
+{{--                                    Not a User? <a href="{{route('registration')}}">Create account</a>--}}
+{{--                                    Not a User? <a href="{{route('password.request')}}">Forgot Your Password?</a>--}}
                                 </div>
                             </div>
                         </form>

@@ -6,13 +6,14 @@
             {{$parent->name}}
         </a>
         <div class="collapse
-
             @if (Route::is('categories.show'))
                 @if (App\Models\Category::ParentOrNotCategory($parent->id, $category->id))
                     show
                 @endif
             @endif
             " id="main-{{$parent->id}}">
+
+{{--            Sub Category--}}
             <div class="child-rows">
                 @foreach(App\Models\Category::orderBy('name','asc')->where('parent_id', $parent->id)->get() as $child)
                     <a href="{{route('categories.show', $child->id)}}" class="list-group-item list-group-item-action

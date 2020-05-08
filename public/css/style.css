@@ -1,4 +1,8 @@
-
+/*Navbar CSS*/
+.mr-auto, .mx-auto {
+    margin-top: 12px!important;
+    margin-bottom: -6px!important;
+}
 /* Product CSS Start*/
 .product-item{
     background: #4e555b;

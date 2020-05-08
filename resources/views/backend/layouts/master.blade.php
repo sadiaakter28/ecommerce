@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="{{asset('assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.addons.css')}}">
+    {{--    DataTables Link--}}
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/dataTables.bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/fixedHeader.bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/responsive.bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/buttons.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/dataTables.bootstrap4.css')}}">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -51,8 +58,23 @@
 </div>
 <!-- container-scroller -->
 <!-- plugins:js -->
+
+<script src="{{asset('js/dataTables.bootstrap.min.js')}}"></script>
+<script src="{{asset('js/dataTables.fixedHeader.min.js')}}"></script>
+<script src="{{asset('js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('js/jquery-3.3.1.js')}}"></script>
+<script src="{{asset('js/responsive.bootstrap.min.js')}}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#datatables').DataTable();
+    } );
+</script>
+
 <script src="{{asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
 <script src="{{asset('assets/vendors/js/vendor.bundle.addons.js')}}"></script>
+
+
 <!-- endinject -->
 <!-- Plugin js for this page-->
 <!-- End plugin js for this page-->
@@ -63,5 +85,6 @@
 <!-- Custom js for this page-->
 <script src="{{asset('assets/js/demo_1/dashboard.js')}}"></script>
 <!-- End custom js for this page-->
+@stack('js')
 </body>
 </html>

@@ -25,6 +25,10 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
     Route::post('/login/create', 'LoginController@create')->name('login.create');
 
     Route::get('/logout', 'LoginController@logout')->name('logout');
+    Route::get('/password/reset', 'PasswordRestController@showLinkRequestForm')->name('password.request');
+    Route::post('/password/email', 'PasswordRestController@sendResetLinkEmail')->name('reset.email');
+    Route::get('/password/reset/{token}', 'PasswordRestController@showResetForm')->name('reset.token');
+    Route::post('/password/reset', 'PasswordRestController@reset')->name('reset');
     //Search
     Route::get('/search/', 'SearchController@search')->name('search');
 

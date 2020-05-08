@@ -29,6 +29,7 @@ class BrandController extends Controller
                 'name.required' => 'Please Provide a Brand Name',
                 'image.image' => 'Please Provide a valid image with .jpg .png .gif .jpeg extension..',
             ]);
+
         $brand = new Brand();
         $brand->name = $request->name;
         $brand->description = $request->description;

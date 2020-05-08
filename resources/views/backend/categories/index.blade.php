@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <h4 class="card-title">List of Categories</h4>
                         <a href="{{route('admin.categories.create')}}" class="btn btn-success">Add Category</a>
                         <table class="table table-hover">
@@ -23,11 +23,11 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($categories as $category)
+                            @foreach($categories as $key=>$category)
                                 <tr>
-                                    <td>#</td>
+                                    <td class="text-center">{{$key+1}}</td>
                                     <td>
-                                        <img src="{!! asset('images/categories/'.$category->image) !!}" width="50">
+                                        <img src="{{asset('images/categories/'.$category->image)}}" width="50">
                                     </td>
                                     <td>{{$category->name}}</td>
                                     <td>

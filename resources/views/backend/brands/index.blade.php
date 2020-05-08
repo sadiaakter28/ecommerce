@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <h4 class="card-title">List of Categories</h4>
                         <a href="{{route('admin.brands.create')}}" class="btn btn-success">Add Brand</a>
                         <table class="table table-hover">
@@ -23,9 +23,9 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($brands as $brand)
+                            @foreach($brands as $key=>$brand)
                                 <tr>
-                                    <td>#</td>
+                                    <td class="text-center">{{$key+1}}</td>
                                     <td>
                                         <img src="{!! asset('images/brands/'.$brand->image) !!}" width="50">
                                     </td>
