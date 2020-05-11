@@ -11,12 +11,12 @@ use Illuminate\Support\Str;
 
 class RegistrationController extends Controller
 {
-    public function index()
+    public function showRegistrationForm()
     {
         return view('frontend.auth.registration');
     }
 
-    public function create(Request $request)
+    public function registration(Request $request)
     {
         $this->validate($request, [
             'name' => 'required|max:64|regex:/^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$/',

@@ -18,17 +18,21 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
     //Home
     Route::get('/', 'HomeController@home')->name('home');
 
-    Route::get('/registration', 'RegistrationController@index')->name('registration');
-    Route::post('/registration/create', 'RegistrationController@create')->name('registration.create');
+    Route::get('/registration', 'RegistrationController@showRegistrationForm')->name('showRegistrationForm');
+    Route::post('/registration', 'RegistrationController@registration')->name('registration');
 
-    Route::get('/login', 'LoginController@index')->name('login');
-    Route::post('/login/create', 'LoginController@create')->name('login.create');
+    Route::get('/login', 'LoginController@showLoginForm')->name('showLoginForm');
+    Route::post('/login', 'LoginController@login')->name('login');
 
     Route::get('/logout', 'LoginController@logout')->name('logout');
+
+    Route::get('/verify/{token}', 'Frontend\LoginController@verifyEmail')->name('verify');
+    //ForgotPassword
+    Route::post('/password/email', 'PasswordRestController@sendResetLinkEmail')->name('password.email'); //reset.email
     Route::get('/password/reset', 'PasswordRestController@showLinkRequestForm')->name('password.request');
-    Route::post('/password/email', 'PasswordRestController@sendResetLinkEmail')->name('reset.email');
-    Route::get('/password/reset/{token}', 'PasswordRestController@showResetForm')->name('reset.token');
-    Route::post('/password/reset', 'PasswordRestController@reset')->name('reset');
+    Route::get('/password/reset/{token}', 'PasswordRestController@showResetForm')->name('password.reset');//reset.token
+    Route::post('/password/reset', 'PasswordRestController@reset')->name('password.update');//reset
+
     //Search
     Route::get('/search/', 'SearchController@search')->name('search');
 

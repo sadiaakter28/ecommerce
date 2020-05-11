@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
+use App\Models\User;
 use App\Notifications\PasswordReset;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +17,7 @@ class PasswordRestController extends Controller
 {
     public function showLinkRequestForm()
     {
-        return view('backend.Auth.forgot');
+        return view('frontend.auth.passwords.reset');
     }
 
     public function sendResetLinkEmail(Request $request)
@@ -65,8 +67,21 @@ class PasswordRestController extends Controller
 
     }
 
-    public function reset(Request $request)
+    public function reset(Request $request, $token)
     {
+        $tokenVerify = DB::table('password_resets')->where('token', $token)->first();
+        if ($tokenVerify->token == $token) {
+            $user = User::where('email', $tokenVerify->email)->first();
+            $user->update([
+                'password' => app('hash')->make($request->input('password')),
+            ]);
+            $tokenVerify = DB::table('password_resets')->where('email', $user->email)->delete();
 
+            Toastr::success('Password updated successfully.', 'success', ["positionClass" => "toast-top-right"]);
+            return redirect()->route('login');
+        }
+
+        Toastr::error('Incorrect password.', 'error', ["positionClass" => "toast-top-right"]);
+        return redirect()->back();
     }
 }
