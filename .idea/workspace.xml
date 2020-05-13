@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c670481c-d2be-4d0a-98a6-0c03e1bcecde" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PasswordRestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PasswordRestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/auth/passwords/reset.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/auth/registration.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/auth/registration.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +149,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/frontend/auth" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../learnPHP" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
@@ -245,7 +239,10 @@
       <workItem from="1588925149471" duration="14262000" />
       <workItem from="1589003567515" duration="886000" />
       <workItem from="1589093826461" duration="1443000" />
-      <workItem from="1589179291267" duration="3411000" />
+      <workItem from="1589179291267" duration="4869000" />
+      <workItem from="1589280735812" duration="22000" />
+      <workItem from="1589280798326" duration="609000" />
+      <workItem from="1589349383848" duration="874000" />
     </task>
     <servers />
   </component>
@@ -265,10 +262,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1589193203791" />
-    <state x="173" y="123" key="FileChooserDialogImpl" timestamp="1588342030198">
+    <state x="173" y="123" key="FileChooserDialogImpl" timestamp="1589280805582">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="173" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1588342030198" />
+    <state x="173" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589280805582" />
     <state x="184" y="7" key="SettingsEditor" timestamp="1586597782458">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
