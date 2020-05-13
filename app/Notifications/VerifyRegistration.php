@@ -11,14 +11,17 @@ class VerifyRegistration extends Notification
 {
     use Queueable;
 
+    public $user;
+    public $token;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -41,8 +44,8 @@ class VerifyRegistration extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->line('Confirm Your Email...')
+                    ->action('Click here to activate', route('user.verification', $this->user->remember_token))
                     ->line('Thank you for using our application!');
     }
 

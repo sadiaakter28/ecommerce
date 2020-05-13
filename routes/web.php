@@ -26,7 +26,9 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
 
     Route::get('/logout', 'LoginController@logout')->name('logout');
 
-    Route::get('/verify/{token}', 'Frontend\LoginController@verifyEmail')->name('verify');
+    Route::get('/token/{token}', 'VerificationController@verify')->name('user.verification');
+
+    Route::get('/verify/{token}', 'LoginController@verifyEmail')->name('verify');
     //ForgotPassword
     Route::post('/password/email', 'PasswordRestController@sendResetLinkEmail')->name('password.email'); //reset.email
     Route::get('/password/reset', 'PasswordRestController@showLinkRequestForm')->name('password.request');

@@ -8,6 +8,7 @@ use App\Models\Division;
 use App\Models\User;
 //use App\Notifications\VerifyEmail;
 //use Brian2694\Toastr\Facades\Toastr;
+use App\Notifications\VerifyRegistration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -59,7 +60,8 @@ class RegistrationController extends Controller
 //            'email_verification_token' => str::random(30),
         ];
         $user = User::create($data);
-        $user->notify();
+//        $user->notify(new VerifyRegistration($user));
+        session()->flash('success', 'A confirmation email has sent to you.. Please check and confirm your email');
 //        $user->notify(new VerifyEmail($user));
 //        Toastr::success('Registration successfully. Please Verify your email to login.', 'success', ["positionClass" => "toast-top-right"]);
         return redirect()->route('home', compact('user'));
