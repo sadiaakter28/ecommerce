@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 @section('title')
-    Brands | Ecommerce
+    Divisions | Ecommerce
 @endsection
 @section('main')
 
@@ -9,37 +9,33 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body table-responsive">
-                        <h4 class="card-title">List of Categories</h4>
-                        <a href="{{route('admin.brands.create')}}" class="btn btn-success">Add Brand</a>
+                        <h4 class="card-title">List of Divisions</h4>
+                        <a href="{{route('admin.divisions.create')}}" class="btn btn-success">Add Division</a>
                         <table class="table table-hover">
                             <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Brand Image</th>
-                                <th>Brand Name</th>
-                                <th>Description</th>
+                                <th>Division Name</th>
+                                <th>Priority</th>
                                 <th>Action</th>
 
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($brands as $key=>$brand)
+                            @foreach($divisions as $key=>$division)
                                 <tr>
                                     <td class="text-center">{{$key+1}}</td>
-                                    <td>
-                                        <img src="{!! asset('images/brands/'.$brand->image) !!}" width="50">
-                                    </td>
-                                    <td>{{$brand->name}}</td>
+                                    <td>{{$division->name}}</td>
 
-                                    <td>{{$brand->description}}</td>
+                                    <td>{{$division->priority}}</td>
                                     <td>
-                                        <a href="{{route('admin.brands.edit',$brand->id)}}"
+                                        <a href="{{route('admin.divisions.edit',$division->id)}}"
                                            class="btn btn-success">Edit</a>
-                                        <a href="#deleteModal{{$brand->id}}" data-toggle="modal"
+                                        <a href="#deleteModal{{$division->id}}" data-toggle="modal"
                                            class="btn btn-danger">Delete</a>
 
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="deleteModal{{$brand->id}}" tabindex="-1"
+                                        <!-- Modal HTML -->
+                                        <div class="modal fade" id="deleteModal{{$division->id}}" tabindex="-1"
                                              role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -51,7 +47,7 @@
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    <form action="{{route('admin.brands.delete', $brand->id)}}"
+                                                    <form action="{{route('admin.categories.delete', $division->id)}}"
                                                           method="post">
                                                         @csrf
                                                         <div class="modal-body">
@@ -67,7 +63,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {{--end model--}}
+                                        {{--Model End--}}
                                     </td>
                                 </tr>
                             @endforeach

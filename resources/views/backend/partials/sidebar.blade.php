@@ -48,7 +48,8 @@
 
                 </ul>
             </div>
-        </li><li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#brands" aria-expanded="false" aria-controls="brands">
                 <i class="menu-icon typcn typcn-coffee"></i>
                 <span class="menu-title">Brands</span>
@@ -58,6 +59,36 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.brands')}}">List</a>
+                    </li>
+
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#division" aria-expanded="false" aria-controls="division">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Division</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="division">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.divisions')}}">List</a>
+                    </li>
+
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#districts" aria-expanded="false" aria-controls="districts">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Districts</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="districts">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.districts')}}">List</a>
                     </li>
 
                 </ul>

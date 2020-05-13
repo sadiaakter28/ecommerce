@@ -49,27 +49,26 @@
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Are you sure to
-                                                            Delete</h5>
+                                                        <h5 class="modal-title" id="exampleModalLabel">Delete
+                                                            Confirmation</h5>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                                 aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    <div class="modal-body">
-                                                        <form action="{{route('admin.categories.delete', $category->id)}}"
-                                                              method="post">
-                                                            @csrf
-                                                            <button type="submit" class="btn btn-danger">Permanent
-                                                                Delete
+                                                    <form action="{{route('admin.categories.delete', $category->id)}}"
+                                                          method="post">
+                                                        @csrf
+                                                        <div class="modal-body">
+                                                            Are you sure you want to delete this?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Cancel
                                                             </button>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Close
-                                                        </button>
-                                                    </div>
+                                                            <button type="submit" class="btn btn-primary">Delete</button>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

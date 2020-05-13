@@ -203,7 +203,7 @@ define(
           ['176', 'degree sign'],
           ['8722', 'minus sign'],
           ['177', 'plus-minus sign'],
-          ['247', 'division sign'],
+          ['247', 'divisions sign'],
           ['8260', 'fraction slash'],
           ['215', 'multiplication sign'],
           ['185', 'superscript one'],
