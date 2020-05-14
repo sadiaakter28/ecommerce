@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('frontend.layouts.master')
 
-@section('content')
+@section('main')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('reset.email') }}">
+                    <form method="POST" action="{{ route('frontend.reset',$token)}}">
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">

@@ -26,14 +26,20 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
 
     Route::get('/logout', 'LoginController@logout')->name('logout');
 
-    Route::get('/token/{token}', 'VerificationController@verify')->name('user.verification');
-
     Route::get('/verify/{token}', 'LoginController@verifyEmail')->name('verify');
-    //ForgotPassword
-    Route::post('/password/email', 'PasswordRestController@sendResetLinkEmail')->name('password.email'); //reset.email
-    Route::get('/password/reset', 'PasswordRestController@showLinkRequestForm')->name('password.request');
-    Route::get('/password/reset/{token}', 'PasswordRestController@showResetForm')->name('password.reset');//reset.token
-    Route::post('/password/reset', 'PasswordRestController@reset')->name('password.update');//reset
+//ForgotPassword
+    Route::get('/forgot/password', 'PasswordRestController@forgot')->name('forgot');
+    Route::post('/forgot/password/reset', 'PasswordRestController@password')->name('password');//forgot blade
+    Route::get('/password/reset/{token}', 'PasswordRestController@showResetForm')->name('password.token');
+    Route::post('/password/reset/{token}', 'PasswordRestController@reset')->name('frontend.reset');//reset blade
+
+//    Route::get('/token/{token}', 'VerificationController@verify')->name('user.verification');
+//    Route::get('/verify/{token}', 'LoginController@verifyEmail')->name('verify');
+//    //ForgotPassword
+//    Route::post('/password/email', 'PasswordRestController@sendResetLinkEmail')->name('password.email'); //reset.email
+//    Route::get('/password/reset', 'PasswordRestController@showLinkRequestForm')->name('password.request');
+//    Route::get('/password/reset/{token}', 'PasswordRestController@showResetForm')->name('password.reset');//reset.token
+//    Route::post('/password/reset', 'PasswordRestController@reset')->name('password.update');//reset
 
     //Search
     Route::get('/search/', 'SearchController@search')->name('search');
@@ -112,3 +118,20 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Backend'], function (){
     });
 });
 //-------------------Backend End------------------//
+
+
+Route::get('/event',function (){
+
+    $user=\App\Models\User::first();
+
+//    if(auth()->attempt(['username'=>'sohel','password'=>'4345'])){
+//
+//        event(new \App\Events\OrderLogEvent(auth()->user()));
+//    }
+
+//   dd( request()->ip());
+
+   dd( request()->userAgent());
+
+
+});

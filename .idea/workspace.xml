@@ -3,8 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="c670481c-d2be-4d0a-98a6-0c03e1bcecde" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PasswordRestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PasswordRestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Notifications/VerifyRegistration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/VerifyRegistration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/queue.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/queue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/auth/passwords/forgot.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/auth/passwords/reset.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +253,9 @@
       <workItem from="1589179291267" duration="4869000" />
       <workItem from="1589280735812" duration="22000" />
       <workItem from="1589280798326" duration="609000" />
-      <workItem from="1589349383848" duration="19762000" />
+      <workItem from="1589349383848" duration="19773000" />
+      <workItem from="1589431438770" duration="8595000" />
+      <workItem from="1589442029290" duration="7133000" />
     </task>
     <servers />
   </component>
@@ -260,18 +271,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="343" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1588156375396" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589360562083">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589446730568">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1589360562083" />
-    <state x="173" y="123" key="FileChooserDialogImpl" timestamp="1589355858230">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1589446730568" />
+    <state x="173" y="123" key="FileChooserDialogImpl" timestamp="1589441981632">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="173" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589355858230" />
+    <state x="173" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589441981632" />
     <state x="184" y="7" key="SettingsEditor" timestamp="1586597782458">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586597782458" />
+    <state width="561" height="446" key="SwitcherDM" timestamp="1589448464443">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="561" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1589448464443" />
     <state x="359" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1588492720808">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -284,5 +299,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1587536527368" />
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1589447936505">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1589447936505" />
   </component>
 </project>
