@@ -4,7 +4,7 @@
 @endsection
 @section('main')
 
-    <div class="container">
+    <div class="container mt-3">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -59,8 +59,8 @@
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Login') }}
                                     </button>
-                                    @if (Route::has('forgot'))
-                                        <a class="btn btn-link" href="{{ route('forgot') }}">
+                                    @if (Route::has('password.request'))
+                                        <a class="btn btn-link" href="{{ route('password.request') }}">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                     @endif

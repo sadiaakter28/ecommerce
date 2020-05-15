@@ -15,7 +15,7 @@
     {{--Sidebar Start--}}
     {{--        @include('frontend.partials.sidebar')--}}
     {{--Sidebar End--}}
-
+    @include('frontend.partials.messages')
     @yield('main')
 
     {{--Footer Start--}}

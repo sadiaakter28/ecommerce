@@ -27,7 +27,7 @@ class RegistrationController extends Controller
             'first_name' => 'required|max:64|regex:/^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$/',
             'last_name' => 'nullable|max:64|regex:/^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$/',
             'email' => 'required|unique:users,email|email',
-            'password' => 'required|min:5',
+            'password' => 'required|min:5|confirmed',
             'division_id' => 'required|numeric',
             'district_id' => 'required|numeric',
             'phone_number' => 'required|max:16|unique:users,phone_number|regex:/^\+?(88)?0?1[3456789][0-9]{8}\b/',
@@ -53,17 +53,17 @@ class RegistrationController extends Controller
             'street_address' => $request->input('street_address'),
             'ip_address' => request()->ip(),
             'remember_token' => str_random(50),
-            'status' => 1,
+            'status' => 0,
 //            'role' => 'customer',
 //            'image' => 'uploads/users/' . $file_name,
 //            'email_verified_at' => trim($request->input('email_verified_at')),
 //            'email_verification_token' => str::random(30),
         ];
         $user = User::create($data);
-//        $user->notify(new VerifyRegistration($user));
-        session()->flash('success', 'A confirmation email has sent to you.. Please check and confirm your email');
+        $user->notify(new VerifyRegistration($user));
+        session()->flash('success','A confirmation email has sent to you.. Please check and confirm your email');
+        return view('frontend.auth.verify', compact('user'));
 //        $user->notify(new VerifyEmail($user));
 //        Toastr::success('Registration successfully. Please Verify your email to login.', 'success', ["positionClass" => "toast-top-right"]);
-        return redirect()->route('home', compact('user'));
     }
 }

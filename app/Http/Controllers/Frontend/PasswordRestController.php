@@ -19,19 +19,17 @@ use Illuminate\Validation\ValidationException;
 
 class PasswordRestController extends Controller
 {
-    public function forgot()
+    public function showLinkRequestForm()
     {
         return view('frontend.auth.passwords.forgot');
     }
 
-
-    public function password(Request $request)
+    public function sendResetLinkEmail(Request $request)
     {
         $email = $request->input('email');
         $this->validate($request, [
             'email' => 'required|email'
         ]);
-
 
         $user = User::where('email', '=', $email)->first();
 
@@ -41,7 +39,6 @@ class PasswordRestController extends Controller
 
         $token = Str::random(60);
 
-
         try {
             $passwordLastInsert = DB::table('password_resets_tables')->insertGetId([
                 'email' => $email,
@@ -50,12 +47,11 @@ class PasswordRestController extends Controller
             ]);
             $user->sendResetEmail($email, $token);
 
-            return 'sent';
+            return view('frontend.auth.verify');
         } catch (\Exception $exception) {
 
         }
     }
-
 
     public function showResetForm($token)
     {
@@ -64,14 +60,11 @@ class PasswordRestController extends Controller
             return redirect()->route('forgot');
         }
         return view('frontend.auth.passwords.reset', compact('token'));
-
     }
-
 
     public function reset(Request $request, $token)
     {
         $tokenVerify = DB::table('password_resets_tables')->where('token', $token)->first();
-
 
         $this->validate($request, [
             'password' => 'required|confirmed'
@@ -88,10 +81,7 @@ class PasswordRestController extends Controller
 //            Toastr::success('Password updated successfully.', 'success', ["positionClass" => "toast-top-right"]);
             return redirect()->route('login');
         }
-
 //        Toastr::error('Incorrect password.', 'error', ["positionClass" => "toast-top-right"]);
         return redirect()->back();
     }
-
-
 }

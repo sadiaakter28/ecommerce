@@ -17,29 +17,24 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
 
     //Home
     Route::get('/', 'HomeController@home')->name('home');
-
+    //User Registration
     Route::get('/registration', 'RegistrationController@showRegistrationForm')->name('showRegistrationForm');
     Route::post('/registration', 'RegistrationController@registration')->name('registration');
-
+    //User Verification
+    Route::get('/registration/verify/{token}', 'VerificationController@verify')->name('user.verification');
+    //Login
     Route::get('/login', 'LoginController@showLoginForm')->name('showLoginForm');
     Route::post('/login', 'LoginController@login')->name('login');
-
+    //Logout
     Route::get('/logout', 'LoginController@logout')->name('logout');
 
     Route::get('/verify/{token}', 'LoginController@verifyEmail')->name('verify');
-//ForgotPassword
-    Route::get('/forgot/password', 'PasswordRestController@forgot')->name('forgot');
-    Route::post('/forgot/password/reset', 'PasswordRestController@password')->name('password');//forgot blade
-    Route::get('/password/reset/{token}', 'PasswordRestController@showResetForm')->name('password.token');
-    Route::post('/password/reset/{token}', 'PasswordRestController@reset')->name('frontend.reset');//reset blade
-
-//    Route::get('/token/{token}', 'VerificationController@verify')->name('user.verification');
-//    Route::get('/verify/{token}', 'LoginController@verifyEmail')->name('verify');
-//    //ForgotPassword
-//    Route::post('/password/email', 'PasswordRestController@sendResetLinkEmail')->name('password.email'); //reset.email
-//    Route::get('/password/reset', 'PasswordRestController@showLinkRequestForm')->name('password.request');
-//    Route::get('/password/reset/{token}', 'PasswordRestController@showResetForm')->name('password.reset');//reset.token
-//    Route::post('/password/reset', 'PasswordRestController@reset')->name('password.update');//reset
+    //ForgotPassword
+    Route::get('/password/reset', 'PasswordRestController@showLinkRequestForm')->name('password.request');
+    Route::post('/password/email', 'PasswordRestController@sendResetLinkEmail')->name('password.email');//forgot blade
+    Route::get('/password/reset/{token}', 'PasswordRestController@showResetForm')->name('password.reset');
+    Route::post('/password/reset/{token}', 'PasswordRestController@reset')->name('password.update');//reset blade
+    //Route::get('/password/resend', 'PasswordRestController@resend')->name('verification.resend');
 
     //Search
     Route::get('/search/', 'SearchController@search')->name('search');
