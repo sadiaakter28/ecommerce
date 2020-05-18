@@ -1,3 +1,11 @@
+html{
+    height: 100%;
+}
+Body{
+    position: relative;
+    min-height: 100%;
+}
+
 /*Navbar CSS*/
 .mr-auto, .mx-auto {
     margin-top: 12px!important;
@@ -39,10 +47,18 @@ Override CSS
 .feature-img{
     max-height: 200px;
 }
+
+.pointer{
+    cursor: pointer;
+}
+
 .footer-bottom{
     padding: 20px;
     margin-top: 20px;
     background: #33b4ff;
-
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
 

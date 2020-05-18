@@ -2,7 +2,7 @@
     <div class="container mt-3">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="alert alert-danger">
+                <div class="alert alert-danger mt-1">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -19,19 +19,19 @@
     <div class="container mt-3">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="alert alert-success">
+                <div class="alert alert-success mt-1">
                     <p>{{Session::get('success')}}</p>
                 </div>
             </div>
         </div>
     </div>
 @endif
-@if(Session::has('errors'))
+@if(Session::has('sticky_error'))
     <div class="container mt-3">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="alert alert-danger">
-                    <p>{{Session::get('errors')}}</p>
+                <div class="alert alert-danger mt-1">
+                    <p>{{Session::get('sticky_error')}}</p>
                 </div>
             </div>
         </div>

@@ -39,6 +39,8 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
     //User
     Route::group(['prefix'=>'user'], function (){
         Route::get('/dashboard', 'UserController@dashboard')->name('user.dashboard');
+        Route::get('/profile', 'UserController@profile')->name('user.profile');
+        Route::post('/profile/update', 'UserController@profileUpdate')->name('user.profile.update');
     });
     //Search
     Route::get('/search/', 'SearchController@search')->name('search');

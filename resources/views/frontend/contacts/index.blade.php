@@ -1,7 +1,5 @@
 @extends('frontend.layouts.master')
 
-@push('css')
-@endpush
 @section('main')
 
 <div class="container margin-top-20">
@@ -10,7 +8,3 @@
 </div>
 
 @endsection
-
-@push('js')
-
-@endpush

@@ -31,22 +31,27 @@ class LoginController extends Controller
 //        dd($credentials);
 //        its not working
         if ($user->status == 1) {
+            //Login this user
             if (Auth::guard('web')->attempt($credentials)) {
 //            Toastr::success('Successfully', 'Login', ["positionClass" => "toast-top-right"]);
                 session()->flash('success', 'Successfully Login');
                 return redirect()->intended(route('home'));
-            } else {
+            }else {
+                session()->flash('sticky_error', 'Invalid Login');
+                return redirect()->route('login');
+            }
+        }else {
                 if (!is_null($user)) {
                     $user->notify(new VerifyRegistration($user));
                     session()->flash('success', 'A new confirmation email has sent to you.. Please check and confirm your email');
                     return redirect()->route('home');
                 } else {
-                    session()->flash('errors', 'Please check and confirm your email');
+                    session()->flash('sticky_error', 'Please check and confirm your email');
                     return redirect()->route('login');
                 }
             }
         }
-    }
+    
 
     public function verifyEmail($token)
     {
