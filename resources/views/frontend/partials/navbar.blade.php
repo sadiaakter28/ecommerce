@@ -62,6 +62,7 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <img src="{{App\Helpers\ImageHelper::getUserImage(Auth::user()->id)}}" class="img rounded-circle" style="width: 50px;" alt="">
                             {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} <span class="caret"></span>
                         </a>
 

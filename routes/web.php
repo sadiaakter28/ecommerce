@@ -28,7 +28,7 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
     //Logout
     Route::get('/logout', 'LoginController@logout')->name('logout');
 
-    Route::get('/verify/{token}', 'LoginController@verifyEmail')->name('verify');
+//    Route::get('/verify/{token}', 'LoginController@verifyEmail')->name('verify');
     //ForgotPassword
     Route::get('/password/reset', 'PasswordRestController@showLinkRequestForm')->name('password.request');
     Route::post('/password/email', 'PasswordRestController@sendResetLinkEmail')->name('password.email');//forgot blade
@@ -36,6 +36,10 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
     Route::post('/password/reset/{token}', 'PasswordRestController@reset')->name('password.update');//reset blade
     //Route::get('/password/resend', 'PasswordRestController@resend')->name('verification.resend');
 
+    //User
+    Route::group(['prefix'=>'user'], function (){
+        Route::get('/dashboard', 'UserController@dashboard')->name('user.dashboard');
+    });
     //Search
     Route::get('/search/', 'SearchController@search')->name('search');
 
@@ -50,9 +54,7 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
     });
     //Category
     Route::group(['prefix'=>'categories'], function (){
-
         Route::get('/show/{id}', 'CategoryController@show')->name('categories.show');
-
     });
 });
 //-------------------Frontend End------------------//

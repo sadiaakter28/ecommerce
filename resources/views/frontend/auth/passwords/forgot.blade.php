@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
-    Reset Password | Ecommerce
+    Forgot Password | Ecommerce
 @endsection
 @section('main')
 <div class="container mt-3">
