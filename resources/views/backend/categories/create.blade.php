@@ -43,7 +43,7 @@
                                 <input type="file" class="form-control" name="image" id="exampleInputEmail1">
                             </div>
                             <button type="submit" class="btn btn-success mr-2">Add Category</button>
-                            <button class="btn btn-light">Cancel</button>
+                            <button class="btn btn-light" data-dismiss="modal">Cancel</button>
                         </form>
                     </div>
                 </div>

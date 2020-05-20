@@ -54,6 +54,15 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
         //Route::get('/show/{slug}', 'ProductController@show')->name('products.show');
         Route::get('/show/{id}', 'ProductController@show')->name('products.show');
     });
+
+    //Cart
+    Route::group(['prefix'=>'carts'], function (){
+        Route::get('/', 'CartsController@index')->name('carts');
+        Route::post('/store', 'CartsController@store')->name('carts.store');
+        Route::post('/update/{id}', 'CartsController@update')->name('carts.update');
+        Route::post('/delete/{id}', 'CartsController@delete')->name('carts.delete');
+    });
+
     //Category
     Route::group(['prefix'=>'categories'], function (){
         Route::get('/show/{id}', 'CategoryController@show')->name('categories.show');
