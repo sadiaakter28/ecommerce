@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
-
+@section('title')
+    Contact | Ecommerce
+@endsection
 @section('main')
 
 <div class="container margin-top-20">

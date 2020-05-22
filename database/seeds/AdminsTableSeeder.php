@@ -13,10 +13,15 @@ class AdminsTableSeeder extends Seeder
     {
         $admin = User::create(
             [
-                'name' => 'admin',
+                'first_name' => 'Sadia',
+                'last_name' => 'Akter',
+                'username' => 'sadiaakter',
                 'phone_number' => '01622222222',
                 'email' => 'admin@gmail.com',
-                'password' => bcrypt('admin')
+                'password' => bcrypt('12345678'),
+                'street_address' => 'H-12',
+                'division_id' => '1',
+                'district_id' => '1',
             ]
         );
     }

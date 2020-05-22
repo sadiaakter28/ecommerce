@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//-------------------Frontend Start------------------//
+//----------------------------------------------------Frontend Start-------------------------------------------------//
 Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
 
     //Home
@@ -55,6 +55,11 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
         Route::get('/show/{id}', 'ProductController@show')->name('products.show');
     });
 
+    //Category
+    Route::group(['prefix'=>'categories'], function (){
+        Route::get('/show/{id}', 'CategoryController@show')->name('categories.show');
+    });
+
     //Cart
     Route::group(['prefix'=>'carts'], function (){
         Route::get('/', 'CartsController@index')->name('carts');
@@ -63,14 +68,15 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
         Route::post('/delete/{id}', 'CartsController@delete')->name('carts.delete');
     });
 
-    //Category
-    Route::group(['prefix'=>'categories'], function (){
-        Route::get('/show/{id}', 'CategoryController@show')->name('categories.show');
+    //Checkouts
+    Route::group(['prefix'=>'checkouts'], function (){
+        Route::get('/', 'CheckoutsController@index')->name('checkouts');
+        Route::post('/store', 'CheckoutsController@store')->name('checkouts.store');
     });
 });
-//-------------------Frontend End------------------//
+//---------------------------------------------------Frontend End----------------------------------------------------//
 
-//-------------------Backend Start------------------//
+//---------------------------------------------------Backend Start---------------------------------------------------//
 Route::group(['prefix'=>'admin', 'namespace' => 'Backend'], function (){
     //home
     Route::get('/', 'HomeController@index')->name('admin.index');
