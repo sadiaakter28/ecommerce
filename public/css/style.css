@@ -7,6 +7,10 @@ Body{
     padding-bottom: 5rem!important;
 }
 
+.hidden {
+    display: none;
+}
+
 /*Navbar CSS*/
 .mr-auto, .mx-auto {
     margin-top: 12px!important;

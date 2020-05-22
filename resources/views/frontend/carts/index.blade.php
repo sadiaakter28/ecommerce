@@ -4,7 +4,8 @@
 @endsection
 @section('main')
     <div class="container">
-        <div class="card-body table-responsive">
+        @if((new App\Models\Cart)->totalItems() > 0)
+            <div class="card-body table-responsive">
             <h4 class="card-title">Carts</h4>
             <table class="table table-hover table-bordered table-striped">
                 <thead>
@@ -87,5 +88,12 @@
                 <a href="{{route('checkouts')}}" class="btn btn-warning btn-lg">Checkout</a>
             </div>
         </div>
+        @else
+            <div class="alert alert-success mt-3">
+                <strong>There is no item in your cart..</strong>
+                <br>
+                <a href="{{route('products.index')}}" class="btn btn-info btn-lg">Continue Shopping...</a>
+            </div>
+        @endif
     </div>
 @endsection
