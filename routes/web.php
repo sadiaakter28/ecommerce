@@ -28,7 +28,7 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
     //Logout
     Route::get('/logout', 'LoginController@logout')->name('logout');
 
-//    Route::get('/verify/{token}', 'LoginController@verifyEmail')->name('verify');
+//    Route::get('/verify/{token}', 'AdminLoginController@verifyEmail')->name('verify');
     //ForgotPassword
     Route::get('/password/reset', 'PasswordRestController@showLinkRequestForm')->name('password.request');
     Route::post('/password/email', 'PasswordRestController@sendResetLinkEmail')->name('password.email');//forgot blade
@@ -76,10 +76,17 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
 });
 //---------------------------------------------------Frontend End----------------------------------------------------//
 
+
 //---------------------------------------------------Backend Start---------------------------------------------------//
 Route::group(['prefix'=>'admin', 'namespace' => 'Backend'], function (){
     //home
     Route::get('/', 'HomeController@index')->name('admin.index');
+
+    //Admin auth
+        Route::get('/login', 'AdminLoginController@showLoginForm')->name('admin.login');
+        Route::post('/login/submit', 'AdminLoginController@login')->name('admin.login.submit');
+        Route::post('/logout/submit', 'AdminLoginController@logout')->name('admin.logout');
+
 
     //product
     Route::group(['prefix'=>'products'], function (){

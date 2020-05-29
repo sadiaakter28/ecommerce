@@ -7,6 +7,11 @@ use Image;
 use File;
 class BrandController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     public function index()
     {
         $brands = Brand::orderBy('id', 'desc')->get();

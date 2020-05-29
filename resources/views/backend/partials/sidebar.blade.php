@@ -120,5 +120,15 @@
                 </ul>
             </div>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link">
+                <form class="form-inline" action="{{ route('admin.logout') }}"  method="post">
+                    @csrf
+                    <input type="submit" value="Logout Now" class="btn btn-danger">
+                </form>
+            </a>
+        </li>
+
     </ul>
 </nav>
