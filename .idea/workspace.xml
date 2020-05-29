@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c670481c-d2be-4d0a-98a6-0c03e1bcecde" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/auth/admin/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/BrandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/BrandController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/DistrictController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/DistrictController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/DivisionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/DivisionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_07_001450_create_admins_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_07_001450_create_admins_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="c670481c-d2be-4d0a-98a6-0c03e1bcecde" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -274,7 +257,7 @@
       <workItem from="1590680067167" duration="1199000" />
       <workItem from="1590730623704" duration="6671000" />
       <workItem from="1590760419588" duration="1509000" />
-      <workItem from="1590764990651" duration="5193000" />
+      <workItem from="1590764990651" duration="5835000" />
     </task>
     <servers />
   </component>
