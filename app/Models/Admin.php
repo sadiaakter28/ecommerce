@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\AdminPasswordResetNotification;
 use App\Notifications\ResetPassword;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -37,11 +38,9 @@ class Admin extends Authenticatable
     ];
 
 
-    public function sendResetEmail($email, $token)
+    public function sendPasswordResetNotification($token)
     {
-        $user = User::where('email', $email)->select('email')->first();
-        $user->notify(new ResetPassword($user, $token));
-
+        $this->notify(new AdminPasswordResetNotification($token));
     }
 
 }

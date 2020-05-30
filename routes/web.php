@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //----------------------------------------------------Frontend Start-------------------------------------------------//
-Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
+Route::group(['prefix' => '', 'namespace' => 'Frontend'], function () {
 
     //Home
     Route::get('/', 'HomeController@home')->name('home');
@@ -37,7 +37,7 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
     //Route::get('/password/resend', 'PasswordRestController@resend')->name('verification.resend');
 
     //User
-    Route::group(['prefix'=>'user'], function (){
+    Route::group(['prefix' => 'user'], function () {
         Route::get('/dashboard', 'UserController@dashboard')->name('user.dashboard');
         Route::get('/profile', 'UserController@profile')->name('user.profile');
         Route::post('/profile/update', 'UserController@profileUpdate')->name('user.profile.update');
@@ -49,19 +49,19 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
     Route::get('/contact', 'ContactController@contacts')->name('contact');
 
     //Product
-    Route::group(['prefix'=>'products'], function (){
+    Route::group(['prefix' => 'products'], function () {
         Route::get('/', 'ProductController@index')->name('products.index');
         //Route::get('/show/{slug}', 'ProductController@show')->name('products.show');
         Route::get('/show/{id}', 'ProductController@show')->name('products.show');
     });
 
     //Category
-    Route::group(['prefix'=>'categories'], function (){
+    Route::group(['prefix' => 'categories'], function () {
         Route::get('/show/{id}', 'CategoryController@show')->name('categories.show');
     });
 
     //Cart
-    Route::group(['prefix'=>'carts'], function (){
+    Route::group(['prefix' => 'carts'], function () {
         Route::get('/', 'CartsController@index')->name('carts');
         Route::post('/store', 'CartsController@store')->name('carts.store');
         Route::post('/update/{id}', 'CartsController@update')->name('carts.update');
@@ -69,7 +69,7 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
     });
 
     //Checkouts
-    Route::group(['prefix'=>'checkouts'], function (){
+    Route::group(['prefix' => 'checkouts'], function () {
         Route::get('/', 'CheckoutsController@index')->name('checkouts');
         Route::post('/store', 'CheckoutsController@store')->name('checkouts.store');
     });
@@ -78,18 +78,24 @@ Route::group(['prefix'=>'', 'namespace' => 'Frontend'], function (){
 
 
 //---------------------------------------------------Backend Start---------------------------------------------------//
-Route::group(['prefix'=>'admin', 'namespace' => 'Backend'], function (){
+Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function () {
     //home
     Route::get('/', 'HomeController@index')->name('admin.index');
 
     //Admin auth
-        Route::get('/login', 'AdminLoginController@showLoginForm')->name('admin.login');
-        Route::post('/login/submit', 'AdminLoginController@login')->name('admin.login.submit');
-        Route::post('/logout/submit', 'AdminLoginController@logout')->name('admin.logout');
+    Route::get('/login', 'AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login/submit', 'AdminLoginController@login')->name('admin.login.submit');
+    Route::post('/logout/submit', 'AdminLoginController@logout')->name('admin.logout');
+
+    //ForgotPassword
+    Route::get('/password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+    Route::post('/password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');//forgot blade
+    Route::get('/password/reset/{token}', 'ForgotPasswordController@showResetForm')->name('admin.password.reset');
+    Route::post('/password/reset/{token}', 'ForgotPasswordController@reset')->name('admin.password.reset.post');//reset blade
 
 
     //product
-    Route::group(['prefix'=>'products'], function (){
+    Route::group(['prefix' => 'products'], function () {
         Route::get('/', 'ProductController@index')->name('admin.products');
         Route::get('/create', 'ProductController@create')->name('admin.products.create');
         Route::post('/store', 'ProductController@store')->name('admin.products.store');
@@ -99,7 +105,7 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Backend'], function (){
     });
 
     //categories
-    Route::group(['prefix'=>'categories'], function (){
+    Route::group(['prefix' => 'categories'], function () {
         Route::get('/', 'CategoryController@index')->name('admin.categories');
         Route::get('/create', 'CategoryController@create')->name('admin.categories.create');
         Route::post('/store', 'CategoryController@store')->name('admin.categories.store');
@@ -109,7 +115,7 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Backend'], function (){
     });
 
     //Brands
-    Route::group(['prefix'=>'brands'], function (){
+    Route::group(['prefix' => 'brands'], function () {
         Route::get('/', 'BrandController@index')->name('admin.brands');
         Route::get('/create', 'BrandController@create')->name('admin.brands.create');
         Route::post('/store', 'BrandController@store')->name('admin.brands.store');
@@ -119,7 +125,7 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Backend'], function (){
     });
 
     //Division
-    Route::group(['prefix'=>'divisions'], function (){
+    Route::group(['prefix' => 'divisions'], function () {
         Route::get('/', 'DivisionController@index')->name('admin.divisions');
         Route::get('/create', 'DivisionController@create')->name('admin.divisions.create');
         Route::post('/store', 'DivisionController@store')->name('admin.divisions.store');
@@ -129,7 +135,7 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Backend'], function (){
     });
 
     //Districts
-    Route::group(['prefix'=>'districts'], function (){
+    Route::group(['prefix' => 'districts'], function () {
         Route::get('/', 'DistrictController@index')->name('admin.districts');
         Route::get('/create', 'DistrictController@create')->name('admin.districts.create');
         Route::post('/store', 'DistrictController@store')->name('admin.districts.store');
@@ -141,9 +147,9 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Backend'], function (){
 //-------------------Backend End------------------//
 
 
-Route::get('/event',function (){
+Route::get('/event', function () {
 
-    $user=\App\Models\User::first();
+    $user = \App\Models\User::first();
 
 //    if(auth()->attempt(['username'=>'sohel','password'=>'4345'])){
 //
@@ -152,7 +158,7 @@ Route::get('/event',function (){
 
 //   dd( request()->ip());
 
-   dd( request()->userAgent());
+    dd(request()->userAgent());
 
 
 });

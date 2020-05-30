@@ -41,7 +41,6 @@ class User extends Authenticatable
     {
         $user = User::where('email', $email)->select('email')->first();
         $user->notify(new ResetPassword($user, $token));
-
     }
 
 }
