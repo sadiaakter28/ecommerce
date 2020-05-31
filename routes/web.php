@@ -156,7 +156,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function () {
     });
 });
 //-------------------Backend End------------------//
+//API routes
+Route::get('get-districts/{id}', function ($id){
+    return json_encode(App\Models\District::where('division_id', $id)->get());
 
+});
 
 Route::get('/event', function () {
 

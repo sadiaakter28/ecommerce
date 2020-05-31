@@ -105,7 +105,8 @@
                                 <label for="division_id" class="col-md-4 col-form-label text-md-right">{{ __('Division') }}</label>
 
                                 <div class="col-md-6">
-                                    <select class="form-control @error('division_id') is-invalid @enderror" name="division_id" required>
+                                    <select class="form-control @error('division_id') is-invalid @enderror"
+                                            name="division_id" id="division_id" required>
                                         <option value="">Please select your division</option>
                                         @foreach($divisions as $division)
                                             <option value="{{$division->id}}"> {{$division->name}} </option>
@@ -123,11 +124,12 @@
                                 <label for="district_id" class="col-md-4 col-form-label text-md-right">{{ __('District') }}</label>
 
                                 <div class="col-md-6">
-                                    <select class="form-control @error('district_id') is-invalid @enderror" name="district_id" required>
-                                        <option value="">Please select your District</option>
-                                        @foreach($districts as $district)
-                                            <option value="{{$district->id}}"> {{$district->name}} </option>
-                                        @endforeach
+                                    <select class="form-control @error('district_id') is-invalid @enderror"
+                                            name="district_id" id="district_area" required>
+{{--                                        <option value="">Please select your District</option>--}}
+{{--                                        @foreach($districts as $district)--}}
+{{--                                            <option value="{{$district->id}}"> {{$district->name}} </option>--}}
+{{--                                        @endforeach--}}
                                     </select>
                                     @error('district_id')
                                     <span class="invalid-feedback" role="alert">
@@ -166,5 +168,23 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        $("#division_id").change(function () {
+            var division = $("#division_id").val();
+            //Send an ajax request to server with this division
+            $("#district_area").html("");
+            var option = "";
+            $.get( "http://localhost/ecommerce/public/get-districts/"+division , function ( data ) {
+                data = JSON.parse(data);
+                data.forEach(function(element){
+                    option += "<option value='"+ element.id +"'> "+ element.name +" </option>";
+                });
+
+                $("#district_area").html(option);
+            });
+        })
+    </script>
 @endsection
 
