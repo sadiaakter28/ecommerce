@@ -14,15 +14,14 @@
         </li>
         <li class="nav-item nav-category">Main Menu</li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.index')}}">
-                <i class="menu-icon typcn typcn-document-text"></i>
+            <a class="nav-link"  href="{{route('admin.index')}}">
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#products" aria-expanded="false" aria-controls="products">
-                <i class="menu-icon typcn typcn-coffee"></i>
+
                 <span class="menu-title">Products</span>
                 <i class="menu-arrow"></i>
             </a>
@@ -34,9 +33,25 @@
                 </ul>
             </div>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#orders" aria-expanded="false" aria-controls="orders">
+
+                <span class="menu-title">Orders</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="orders">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.orders')}}">List</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#categories" aria-expanded="false" aria-controls="categories">
-                <i class="menu-icon typcn typcn-coffee"></i>
+
                 <span class="menu-title">Categories</span>
                 <i class="menu-arrow"></i>
             </a>
@@ -51,7 +66,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#brands" aria-expanded="false" aria-controls="brands">
-                <i class="menu-icon typcn typcn-coffee"></i>
+
                 <span class="menu-title">Brands</span>
                 <i class="menu-arrow"></i>
             </a>
@@ -66,7 +81,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#division" aria-expanded="false" aria-controls="division">
-                <i class="menu-icon typcn typcn-coffee"></i>
+
                 <span class="menu-title">Division</span>
                 <i class="menu-arrow"></i>
             </a>
@@ -81,7 +96,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#districts" aria-expanded="false" aria-controls="districts">
-                <i class="menu-icon typcn typcn-coffee"></i>
+
                 <span class="menu-title">Districts</span>
                 <i class="menu-arrow"></i>
             </a>
@@ -96,7 +111,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <i class="menu-icon typcn typcn-document-add"></i>
+
                 <span class="menu-title">User Pages</span>
                 <i class="menu-arrow"></i>
             </a>
@@ -121,14 +136,14 @@
             </div>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link">
-                <form class="form-inline" action="{{ route('admin.logout') }}"  method="post">
-                    @csrf
-                    <input type="submit" value="Logout Now" class="btn btn-danger">
-                </form>
-            </a>
-        </li>
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link">--}}
+{{--                <form class="form-inline" action="{{ route('admin.logout') }}"  method="post">--}}
+{{--                    @csrf--}}
+{{--                    <input type="submit" value="Logout Now" class="btn btn-danger">--}}
+{{--                </form>--}}
+{{--            </a>--}}
+{{--        </li>--}}
 
     </ul>
 </nav>

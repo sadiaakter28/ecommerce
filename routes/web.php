@@ -104,6 +104,17 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function () {
         Route::post('/delete/{id}', 'ProductController@delete')->name('admin.products.delete');
     });
 
+    //orders
+    Route::group(['prefix' => 'orders'], function () {
+        Route::get('/', 'OrdersController@index')->name('admin.orders');
+        Route::get('/show/{id}', 'OrdersController@show')->name('admin.orders.show');
+        Route::post('/delete/{id}', 'OrdersController@delete')->name('admin.orders.delete');
+
+        Route::post('/completed/{id}', 'OrdersController@completed')->name('admin.orders.completed');
+        Route::post('/paid/{id}', 'OrdersController@paid')->name('admin.orders.paid');
+
+    });
+
     //categories
     Route::group(['prefix' => 'categories'], function () {
         Route::get('/', 'CategoryController@index')->name('admin.categories');

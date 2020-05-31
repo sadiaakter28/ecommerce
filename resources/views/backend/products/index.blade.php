@@ -12,10 +12,11 @@
                         <h4 class="card-title">List of Products</h4>
                         <a href="{{route('admin.products.create')}}" class="btn btn-success">Add Product</a>
 
-                                    <table class="table table-hover">
+                                    <table class="table table-hover" id="dataTable">
                                         <thead>
                                         <tr>
                                             <th>No.</th>
+                                            <th>Product Code</th>
                                             <th>Product Image</th>
                                             <th>Title</th>
                                             <th>Description</th>
@@ -30,6 +31,7 @@
                                         <tbody>
                                         @foreach($products as $key=>$product)
                                             <tr>
+                                                <td>#PLE{{$product->id}}</td>
                                                 <td class="text-center">{{$key+1}}</td>
                                                 <td>
                                                     <img src="{{asset('images/products/' . $product->product_image)}}"

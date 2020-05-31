@@ -11,7 +11,7 @@
                     <div class="card-body table-responsive">
                         <h4 class="card-title">List of Districts</h4>
                         <a href="{{route('admin.districts.create')}}" class="btn btn-success">Add District</a>
-                        <table class="table table-hover">
+                        <table class="table table-hover"  id="dataTable">
                             <thead>
                             <tr>
                                 <th>No.</th>

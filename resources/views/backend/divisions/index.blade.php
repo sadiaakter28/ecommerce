@@ -11,7 +11,7 @@
                     <div class="card-body table-responsive">
                         <h4 class="card-title">List of Divisions</h4>
                         <a href="{{route('admin.divisions.create')}}" class="btn btn-success">Add Division</a>
-                        <table class="table table-hover">
+                        <table class="table table-hover"  id="dataTable">
                             <thead>
                             <tr>
                                 <th>No.</th>
