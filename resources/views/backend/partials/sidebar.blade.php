@@ -3,12 +3,12 @@
         <li class="nav-item nav-profile">
             <a href="#" class="nav-link">
                 <div class="profile-image">
-                    <img class="img-xs rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="profile image">
+                    <img class="img-xs rounded-circle" src="{{App\Helpers\ImageHelper::getUserImage(Auth::user()->id)}}" alt="profile image">
                     <div class="dot-indicator bg-success"></div>
                 </div>
                 <div class="text-wrapper">
-                    <p class="profile-name">Sadia Akter</p>
-                    <p class="designation">Admin</p>
+                    <p class="profile-name">{{ Auth::user()->name }}</p>
+                    <p class="designation">{{  Auth::user()->type }}</p>
                 </div>
             </a>
         </li>
@@ -109,6 +109,23 @@
                 </ul>
             </div>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#sliders" aria-expanded="false" aria-controls="sliders">
+
+                <span class="menu-title">Sliders</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="sliders">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.sliders')}}">List</a>
+                    </li>
+
+                </ul>
+            </div>
+        </li>
+
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
 

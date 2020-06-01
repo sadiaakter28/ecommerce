@@ -67,3 +67,24 @@ Override CSS
     bottom: 0;
 }
 
+/** Bootstrap Overrides**/
+.carousel-indicators li {
+    position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    margin-right: 3px;
+    flex: 0 1 auto;
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+    text-indent: -999px;
+    border-radius: 20px!important;
+    background-color: hsl(194, 98%, 44%);
+}
+
+.carousel-caption h5 {
+    color: #000;
+    font-weight: bold;
+    padding: 10px;
+}
+

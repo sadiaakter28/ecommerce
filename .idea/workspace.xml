@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c670481c-d2be-4d0a-98a6-0c03e1bcecde" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/sliders/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/sliders/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/sliders/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/auth/registration.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/auth/registration.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/partials/scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/partials/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/style.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/partials/style.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,13 +161,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/backend/orders" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/backend" />
     <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\localhost\ecommerce\resources\views\backend\orders" />
       <recent name="F:\localhost\ecommerce\resources\views\backend" />
+      <recent name="F:\localhost\ecommerce\resources\views\backend\orders" />
       <recent name="F:\localhost\ecommerce\resources\views\frontend\auth\admin" />
       <recent name="F:\localhost\ecommerce\resources\views\frontend\user" />
       <recent name="F:\localhost\ecommerce\resources\views\frontend\partials" />
@@ -264,7 +273,10 @@
       <workItem from="1590760419588" duration="1509000" />
       <workItem from="1590764990651" duration="6173000" />
       <workItem from="1590830342229" duration="15176000" />
-      <workItem from="1590919415287" duration="9035000" />
+      <workItem from="1590919415287" duration="17562000" />
+      <workItem from="1590998597179" duration="3094000" />
+      <workItem from="1591002527574" duration="4938000" />
+      <workItem from="1591021333894" duration="6652000" />
     </task>
     <servers />
   </component>
@@ -280,10 +292,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="343" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1588156375396" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1590857287627">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591003991207">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1590857287627" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1591003991207" />
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1589816838957" />
     <state x="173" y="123" key="FileChooserDialogImpl" timestamp="1590830585757">
       <screen x="0" y="0" width="1366" height="728" />
@@ -306,10 +318,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="561" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1589448464443" />
-    <state x="359" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1590919791406">
+    <state x="359" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1591021344255">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="359" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1590919791406" />
+    <state x="359" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1591021344255" />
     <state x="359" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1590730774876" />
     <state x="324" y="90" width="700" height="530" key="recent.locations.popup" timestamp="1588057709757">
       <screen x="0" y="0" width="1366" height="728" />

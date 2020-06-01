@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
+use Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,9 +11,10 @@ class HomeController extends Controller
     {
         $this->middleware('auth:admin');
     }
-    
+
     public function index()
     {
-        return view('backend.home.index');
+        $user = Auth::user();
+        return view('backend.home.index',compact('user'));
     }
 }

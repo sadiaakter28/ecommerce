@@ -154,6 +154,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function () {
         Route::post('/update/{id}', 'DistrictController@update')->name('admin.districts.update');
         Route::post('/delete/{id}', 'DistrictController@delete')->name('admin.districts.delete');
     });
+
+    //Sliders
+    Route::group(['prefix' => 'sliders'], function () {
+        Route::get('/', 'SlidersController@index')->name('admin.sliders');
+        Route::post('/store', 'SlidersController@store')->name('admin.sliders.store');
+        Route::post('/update/{id}', 'SlidersController@update')->name('admin.sliders.update');
+        Route::post('/delete/{id}', 'SlidersController@delete')->name('admin.sliders.delete');
+    });
+
 });
 //-------------------Backend End------------------//
 //API routes
