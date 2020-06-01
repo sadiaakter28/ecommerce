@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+//Cart
+Route::group(['prefix' => 'carts', 'namespace' => 'API'], function () {
+    Route::get('/', 'CartsController@index')->name('carts');
+    Route::post('/store', 'CartsController@store')->name('carts.store');
+    Route::post('/update/{id}', 'CartsController@update')->name('carts.update');
+    Route::post('/delete/{id}', 'CartsController@delete')->name('carts.delete');
 });

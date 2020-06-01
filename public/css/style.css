@@ -43,7 +43,15 @@ Override CSS
 */
 
 .bg-light{
-    background-color: #33b4ff!important;
+    background-color: #03333f!important;
+    height: 60px;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: rgb(255, 255, 255)!important;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(255, 255, 255);
 }
 
 .margin-top-20{
@@ -60,7 +68,7 @@ Override CSS
 .footer-bottom{
     padding: 20px;
     margin-top: 20px;
-    background: #33b4ff;
+    background: #03333f;
     position: relative!important;
     right: 0;
     left: 0;
@@ -79,7 +87,7 @@ Override CSS
     margin-left: 3px;
     text-indent: -999px;
     border-radius: 20px!important;
-    background-color: hsl(194, 98%, 44%);
+    background-color: #03333f;
 }
 
 .carousel-caption h5 {

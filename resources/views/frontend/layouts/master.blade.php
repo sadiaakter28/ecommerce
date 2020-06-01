@@ -1,11 +1,13 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8" >
     <title>
         @yield('title','Ecommerce')
     </title>
+    <meta name="csrf-token" content="{{ csrf_token()}}">
     @include('frontend.partials.style')
 </head>
-
 <body>
 <div class="wrapper">
     {{--    Nevigation Start--}}
