@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master')
+@extends('backend.layouts.master')
 @section('title')
     Dashboard | Ecommerce
 @endsection
@@ -9,14 +9,14 @@
             <div class="col-md-4">
                 <div class="list-group">
                     <a href="" class="list-group-item ">
-                        <img src="{{asset('images/users/'.$user->avatar)}}"
+                        <img src="{{asset('images/admins/'.$user->avatar)}}"
                              class="img rounded-circle" style="height: 150px; width: 150px;" alt="">
                     </a>
 
-                    <a href="{{route('user.dashboard')}}"
-                       class="list-group-item {{Route::is('user.dashboard') ? 'active' : ''}}">Dashboard</a>
-                    <a href="{{route('user.dashboard')}}"
-                       class="list-group-item {{Route::is('user.profile') ? 'active' : ''}}">Update Profile</a>
+                    <a href="{{route('admin.profile.dashboard')}}"
+                       class="list-group-item {{Route::is('admin.profile.dashboard') ? 'active' : ''}}">Dashboard</a>
+                    <a href="{{route('admin.profile.show')}}"
+                       class="list-group-item {{Route::is('admin.profile.show') ? 'active' : ''}}">Update Profile</a>
                 </div>
             </div>
             <div class="col-md-8">

@@ -6,7 +6,7 @@
 
     <div class="container">
         <div class="card-body mb-5">
-            <form method="POST" action="{{ route('user.profile.update') }}">
+            <form method="POST" action="{{ route('user.profile.update',$user->id) }}" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group row">
@@ -180,6 +180,31 @@
                                   autocomplete="shipping_address" autofocus> {{$user->shipping_address}} </textarea>
 
                         @error('shipping_address')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="oldimage" class="col-md-4 col-form-label text-md-right">{{ __('User Old Image') }}</label>
+
+                    <div class="col-md-6">
+                        <img src="{!! asset('images/users/'.$user->avatar) !!}"
+                             style="height: 100px;width: 100px; border-radius: 50px">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('User Image') }}</label>
+
+                    <div class="col-md-6">
+                        <input name="avatar" id="avatar" type="file"
+                               class="form-control @error('avatar') is-invalid @enderror"
+                               value="{{ $user->avatar }}" autocomplete="avatar" autofocus>
+
+                        @error('avatar')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

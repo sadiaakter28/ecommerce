@@ -1,41 +1,49 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\District;
 use App\Models\Division;
 use App\Models\User;
 use Auth;
-use Image;
 use File;
+use Image;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:admin');
     }
 
-    public function dashboard()
+    public function index()
     {
-        $user = Auth::user();
-        return view('frontend.user.dashboard',compact('user'));
+        $users = User::orderBy('id', 'desc')->get();
+        return view('backend.users.index', compact('users'));
     }
 
-    public function profile()
+    public function edit($id)
     {
-        $user = Auth::user();
+        $user = User::find($id);
         $divisions = Division::orderBy('priority', 'asc')->get();
         $districts = District::orderBy('name', 'asc')->get();
-        return view('frontend.user.profile',compact('user','divisions','districts'));
+        if (!is_null($user))
+        {
+            return view('backend.users.edit', compact('user','divisions','districts'));
+        }
+        else
+        {
+            return redirect()->route('backend.users');
+        }
     }
 
-    public function profileUpdate(Request $request)
+    public function update(Request $request, $id)
     {
-        $user= Auth::user();
-        $this->validate($request, [
+        $user = User::find($id);
+
+        $request->validate([
             'first_name' => 'required|max:64|regex:/^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$/',
             'last_name' => 'required|max:64|regex:/^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$/',
             'username' => 'required|max:64|alpha_dash|unique:users,username,'.$user->id,
@@ -46,7 +54,6 @@ class UserController extends Controller
             'phone_number' => 'required|max:16|regex:/^\+?(88)?0?1[3456789][0-9]{8}\b/|unique:users,phone_number,'.$user->id,
             'street_address' => 'required|max:100',
         ]);
-
 
         $user->first_name = $request->input('first_name');
         $user->last_name = $request->input('last_name');
@@ -63,8 +70,13 @@ class UserController extends Controller
         $user->ip_address = request()->ip();
         $user->remember_token = str_random(50);
 
-        // Insert Image into User Image Model (Only for one image)
+        //Insert Image into UserImage Model(Only for one image)
         if ($request->hasFile('avatar')) {
+            //Delete the old image from folder
+            if (File::exists('images/users/' . $user->avatar))
+            {
+                File::delete('images/users/' . $user->avatar);
+            }
             //Insert that Image
             $avatar = $request->file('avatar');
             $img = time() . '.' . $avatar->getClientOriginalExtension();
@@ -72,9 +84,26 @@ class UserController extends Controller
             Image::make($avatar)->save($location);
             $user->avatar = $img;
         }
-
         $user->save();
-        session()->flash('success', 'User profile has updated successfully!!');
+        session()->flash('success', 'Updated Successfully!');
+        return redirect()->route('admin.users');
+    }
+
+    public function delete($id)
+    {
+        $user = User::find($id);
+        if (!is_null($user))
+        {
+            //Delete User image
+            if (File::exists('images/users/' . $user->avatar))
+            {
+                File::delete('images/users/' . $user->avatar);
+            }
+            $user->delete();
+        }
+        session()->flash('success', 'User has Deleted Successfully!!');
         return back();
     }
+
+
 }

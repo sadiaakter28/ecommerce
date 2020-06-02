@@ -42,6 +42,15 @@ class User extends Authenticatable
         $user = User::where('email', $email)->select('email')->first();
         $user->notify(new ResetPassword($user, $token));
     }
+    public function district()
+    {
+        return $this->belongsTo(District::class);
+    }
+
+    public function division()
+    {
+        return $this->belongsTo(Division::class);
+    }
 
 }
 

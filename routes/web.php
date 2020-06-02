@@ -93,6 +93,19 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function () {
     Route::get('/password/reset/{token}', 'ForgotPasswordController@showResetForm')->name('admin.password.reset');
     Route::post('/password/reset/{token}', 'ForgotPasswordController@reset')->name('admin.password.reset.post');//reset blade
 
+    //Admin Profile
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('/dashboard', 'ProfileController@dashboard')->name('admin.profile.dashboard');
+        Route::get('/profile', 'ProfileController@profile')->name('admin.profile.show');
+        Route::post('/profile/update', 'ProfileController@profileUpdate')->name('admin.profile.update');
+    });
+    //Users
+    Route::group(['prefix' => 'users'], function () {
+        Route::get('/', 'UsersController@index')->name('admin.users');
+        Route::get('/edit/{id}', 'UsersController@edit')->name('admin.users.edit');
+        Route::post('/update/{id}', 'UsersController@update')->name('admin.users.update');
+        Route::post('/delete/{id}', 'UsersController@delete')->name('admin.users.delete');
+    });
 
     //product
     Route::group(['prefix' => 'products'], function () {
