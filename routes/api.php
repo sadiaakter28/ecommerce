@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //Cart
-Route::group(['prefix' => 'carts', 'namespace' => 'API'], function () {
-    Route::get('/', 'CartsController@index')->name('carts');
-    Route::post('/store', 'CartsController@store')->name('carts.store');
-    Route::post('/update/{id}', 'CartsController@update')->name('carts.update');
-    Route::post('/delete/{id}', 'CartsController@delete')->name('carts.delete');
-});
+//Route::group(['prefix' => 'carts', 'namespace' => 'API'], function () {
+//    Route::get('/', 'CartsController@index')->name('carts');
+//    Route::post('/store', 'CartsController@store')->name('carts.store');
+//    Route::post('/update/{id}', 'CartsController@update')->name('carts.update');
+//    Route::post('/delete/{id}', 'CartsController@delete')->name('carts.delete');
+//});
